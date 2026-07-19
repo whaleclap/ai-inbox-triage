@@ -10,7 +10,11 @@ def get_provider(name: str, model: str | None = None) -> Provider:
         from .anthropic_provider import AnthropicProvider, DEFAULT_MODEL
 
         return AnthropicProvider(model=model or DEFAULT_MODEL)
-    raise ValueError(f"Unknown provider: {name!r} (expected 'anthropic' or 'mock')")
+    if name == "claude-cli":
+        from .claude_cli import ClaudeCliProvider
+
+        return ClaudeCliProvider()
+    raise ValueError(f"Unknown provider: {name!r} (expected 'anthropic', 'claude-cli', or 'mock')")
 
 
 __all__ = ["Provider", "ProviderUnavailable", "MockProvider", "get_provider"]

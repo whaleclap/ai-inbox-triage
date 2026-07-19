@@ -1,4 +1,4 @@
-"""Command-line entry point: load -> triage -> report."""
+﻿"""Command-line entry point: load -> triage -> report."""
 
 from __future__ import annotations
 
@@ -20,7 +20,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("input", help="Path to a .csv or .mbox file of emails")
     parser.add_argument(
         "--provider",
-        choices=("anthropic", "mock"),
+        choices=("anthropic", "claude-cli", "mock"),
         default="anthropic",
         help="LLM backend. 'mock' is an offline keyword-heuristic demo mode (default: anthropic, "
         "falls back to mock if the SDK or API key is missing)",
@@ -113,9 +113,14 @@ def _print_summary(stats: RunStats, provider) -> None:
             f"API usage: {u.input_tokens:,} in / {u.output_tokens:,} out tokens"
             f"  ->  ${provider.cost_usd():.4f}"
         )
+    elif provider.name == "claude-cli":
+        print("API cost: $0.00 (ran through the local Claude Code CLI, subscription auth)")
     else:
         print("API cost: $0.00 (mock provider, no API calls made)")
 
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
+
+

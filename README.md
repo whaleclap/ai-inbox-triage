@@ -1,5 +1,7 @@
 # inbox-triage
 
+[![tests](https://github.com/whaleclap/ai-inbox-triage/actions/workflows/ci.yml/badge.svg)](https://github.com/whaleclap/ai-inbox-triage/actions)
+
 CLI tool for small support teams drowning in email. Point it at a batch of
 customer messages (CSV or `.mbox`), and it classifies each one (category,
 urgency 1-5, sentiment), writes a one-line summary, and drafts a suggested
@@ -25,11 +27,15 @@ python -m inbox_triage sample_data/emails.csv --provider mock --out demo_output
 pip install anthropic
 set ANTHROPIC_API_KEY=sk-ant-...        # PowerShell: $env:ANTHROPIC_API_KEY="sk-ant-..."
 python -m inbox_triage sample_data/emails.csv
+
+# Also real, no API key — routes through a locally installed Claude Code CLI:
+python -m inbox_triage sample_data/emails.csv --provider claude-cli
 ```
 
-Then open `demo_output/report.html` in a browser. A pre-generated copy is
-checked in at [`demo_output/report.html`](demo_output/report.html) (produced
-by mock mode, so no real customer data and no API calls).
+Then open `demo_output/report.html` in a browser. The pre-generated copy
+checked in at [`demo_output/report.html`](demo_output/report.html) is real
+Claude output (produced via the `claude-cli` provider on the synthetic sample
+data — no real customer data anywhere).
 
 ## What a run looks like
 
