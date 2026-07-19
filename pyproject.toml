@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "inbox-triage"
+version = "0.1.0"
+description = "Classify, prioritize, and draft replies for batches of customer emails with Claude."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Justin Finley" }]
+# Zero required dependencies: mock mode is pure stdlib.
+dependencies = []
+
+[project.optional-dependencies]
+anthropic = ["anthropic>=0.40"]
+
+[project.scripts]
+inbox-triage = "inbox_triage.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["inbox_triage*"]

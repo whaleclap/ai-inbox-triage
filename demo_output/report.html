@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inbox Triage Report</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #ffffff; --ink: #1f2733; --muted: #67707d;
+    --line: #e3e7ec; --accent: #2455a4;
+    --u1: #e7f0e7; --u2: #eef3e2; --u3: #fdf3d8; --u4: #fbe3d4; --u5: #f9d7d5;
+    --u1-ink: #2e6b34; --u2-ink: #5a7020; --u3-ink: #8a6d1a; --u4-ink: #a04d17; --u5-ink: #a02420;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 15px/1.5 Georgia, 'Times New Roman', serif; background: var(--bg); color: var(--ink); }
+  header { padding: 28px 32px 18px; border-bottom: 1px solid var(--line); background: var(--card); }
+  h1 { margin: 0 0 4px; font-size: 24px; font-weight: 600; }
+  .meta { color: var(--muted); font-size: 13px; }
+  .cards { display: flex; flex-wrap: wrap; gap: 14px; padding: 20px 32px 4px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 12px 18px; min-width: 130px; }
+  .card .num { font-size: 22px; font-weight: 700; }
+  .card .lbl { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+  main { padding: 20px 32px 48px; }
+  table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  th, td { padding: 10px 12px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+  th { background: #eef1f5; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; cursor: pointer; user-select: none; white-space: nowrap; }
+  th .arrow { opacity: .45; font-size: 10px; margin-left: 4px; }
+  tr:last-child td { border-bottom: none; }
+  .badge { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+  .u1 .badge { background: var(--u1); color: var(--u1-ink); }
+  .u2 .badge { background: var(--u2); color: var(--u2-ink); }
+  .u3 .badge { background: var(--u3); color: var(--u3-ink); }
+  .u4 .badge { background: var(--u4); color: var(--u4-ink); }
+  .u5 .badge { background: var(--u5); color: var(--u5-ink); }
+  tr.u4 td, tr.u5 td { background: #fffaf7; }
+  .cat { font-variant: small-caps; letter-spacing: .03em; }
+  .sent-positive { color: #2e6b34; } .sent-negative { color: #a02420; } .sent-neutral { color: var(--muted); }
+  details summary { cursor: pointer; color: var(--accent); font-size: 13px; }
+  details p { margin: 8px 0 0; padding: 10px 12px; background: #f4f6f9; border-left: 3px solid var(--accent); font-size: 14px; white-space: pre-wrap; }
+  .subject { font-weight: 600; }
+  .from { color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Inbox Triage Report</h1>
+  <div class="meta">Generated 2026-07-19 18:48 UTC &middot; provider: mock &middot; 15 messages &middot; click a column header to sort</div>
+</header>
+<div class="cards"><div class="card"><div class="num">15</div><div class="lbl">messages</div></div><div class="card"><div class="num">3</div><div class="lbl">high urgency</div></div><div class="card"><div class="num">2</div><div class="lbl">negative</div></div><div class="card"><div class="num">billing</div><div class="lbl">top category</div></div></div>
+<main>
+<table id="triage">
+  <thead>
+    <tr>
+      <th data-key="urgency" data-num="1">Urgency<span class="arrow">&#8597;</span></th>
+      <th data-key="category">Category<span class="arrow">&#8597;</span></th>
+      <th data-key="sentiment">Sentiment<span class="arrow">&#8597;</span></th>
+      <th data-key="from">From<span class="arrow">&#8597;</span></th>
+      <th data-key="subject">Subject &amp; summary<span class="arrow">&#8597;</span></th>
+      <th>Suggested reply</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="u3" data-urgency="3" data-category="billing" data-sentiment="neutral" data-from="dana.whitfield@example.com" data-subject="Charged twice this month?!">
+      <td><span class="badge">3 &middot; Normal</span></td>
+      <td class="cat">billing</td>
+      <td class="sent-neutral">neutral</td>
+      <td class="from">dana.whitfield@example.com</td>
+      <td><div class="subject">Charged twice this month?!</div><div>Hi, I just checked my bank statement and I was charged $49 twice on July 3rd.</div></td>
+      <td><details><summary>show draft</summary><p>Thanks for flagging this — I&#x27;m looking into your billing history now. Could you confirm the last 4 digits of the card and the invoice date so I can trace the charge? If anything was billed in error we&#x27;ll correct it right away.</p></details></td>
+    </tr>
+    <tr class="u3" data-urgency="3" data-category="refund" data-sentiment="negative" data-from="marco.t@example.com" data-subject="Requesting a refund for order #4471">
+      <td><span class="badge">3 &middot; Normal</span></td>
+      <td class="cat">refund</td>
+      <td class="sent-negative">negative</td>
+      <td class="from">marco.t@example.com</td>
+      <td><div class="subject">Requesting a refund for order #4471</div><div>Hello, I ordered the Pro plan last week but it turns out it doesn&#x27;t have the export feature I needed.</div></td>
+      <td><details><summary>show draft</summary><p>Sorry this didn&#x27;t work out. I&#x27;ve started the refund review on our side — could you confirm the order or invoice number? Approved refunds are returned to the original payment method within 5-7 business days.</p></details></td>
+    </tr>
+    <tr class="u5" data-urgency="5" data-category="outage" data-sentiment="neutral" data-from="ops@brightlane-logistics.example.com" data-subject="URGENT: dashboard completely down">
+      <td><span class="badge">5 &middot; Critical</span></td>
+      <td class="cat">outage</td>
+      <td class="sent-neutral">neutral</td>
+      <td class="from">ops@brightlane-logistics.example.com</td>
+      <td><div class="subject">URGENT: dashboard completely down</div><div>Our whole team cannot access the dashboard since about 7am.</div></td>
+      <td><details><summary>show draft</summary><p>Thanks for the report — we&#x27;re treating this as a priority and investigating now. I&#x27;ll follow up as soon as we&#x27;ve identified the cause. You can also watch our status page for live updates.</p></details></td>
+    </tr>
+    <tr class="u1" data-urgency="1" data-category="praise" data-sentiment="positive" data-from="jenny.park@example.com" data-subject="You folks are amazing">
+      <td><span class="badge">1 &middot; Low</span></td>
+      <td class="cat">praise</td>
+      <td class="sent-positive">positive</td>
+      <td class="from">jenny.park@example.com</td>
+      <td><div class="subject">You folks are amazing</div><div>Just wanted to say thank you to your support team — Priya helped me migrate all my data last week and staye...</div></td>
+      <td><details><summary>show draft</summary><p>Thank you so much for the kind words — messages like this genuinely make our week. If there&#x27;s ever anything we can improve, we&#x27;re all ears.</p></details></td>
+    </tr>
+    <tr class="u1" data-urgency="1" data-category="spam" data-sentiment="neutral" data-from="winner-alert@lucky-crypto-hub.example.net" data-subject="You have been selected — act now">
+      <td><span class="badge">1 &middot; Low</span></td>
+      <td class="cat">spam</td>
+      <td class="sent-neutral">neutral</td>
+      <td class="from">winner-alert@lucky-crypto-hub.example.net</td>
+      <td><div class="subject">You have been selected — act now</div><div>Congratulations!</div></td>
+      <td><details><summary>show draft</summary><p>No reply recommended — flagged as spam.</p></details></td>
+    </tr>
+    <tr class="u3" data-urgency="3" data-category="feature-request" data-sentiment="positive" data-from="sofia.reyes@example.com" data-subject="Feature request: dark mode">
+      <td><span class="badge">3 &middot; Normal</span></td>
+      <td class="cat">feature-request</td>
+      <td class="sent-positive">positive</td>
+      <td class="from">sofia.reyes@example.com</td>
+      <td><div class="subject">Feature request: dark mode</div><div>Hi team, I use the app late at night and it would be great if you could please add a dark mode.</div></td>
+      <td><details><summary>show draft</summary><p>Thanks for the suggestion — I&#x27;ve passed it to our product team and added your vote to the request. We can&#x27;t promise a timeline, but we&#x27;ll let you know if it ships.</p></details></td>
+    </tr>
+    <tr class="u3" data-urgency="3" data-category="bug" data-sentiment="neutral" data-from="tom.abernathy@example.com" data-subject="App crashes when uploading CSV over 10MB">
+      <td><span class="badge">3 &middot; Normal</span></td>
+      <td class="cat">bug</td>
+      <td class="sent-neutral">neutral</td>
+      <td class="from">tom.abernathy@example.com</td>
+      <td><div class="subject">App crashes when uploading CSV over 10MB</div><div>Steps to reproduce: go to Imports, choose a CSV bigger than about 10MB, hit upload.</div></td>
+      <td><details><summary>show draft</summary><p>Thanks for the detailed report. I&#x27;ve logged this with our engineering team. Could you share what device/browser you&#x27;re on and roughly when it last happened? That will help us reproduce it quickly.</p></details></td>
+    </tr>
+    <tr class="u2" data-urgency="2" data-category="question" data-sentiment="positive" data-from="l.nakamura@example.com" data-subject="How do I add a second user to my account?">
+      <td><span class="badge">2 &middot; Minor</span></td>
+      <td class="cat">question</td>
+      <td class="sent-positive">positive</td>
+      <td class="from">l.nakamura@example.com</td>
+      <td><div class="subject">How do I add a second user to my account?</div><div>Hi, quick question — is it possible to add my business partner as a second user on my existing plan, or do...</div></td>
+      <td><details><summary>show draft</summary><p>Thanks for reaching out. Happy to help — I&#x27;ve included the most relevant details below, and if anything is still unclear just reply to this email.</p></details></td>
+    </tr>
+    <tr class="u3" data-urgency="3" data-category="billing" data-sentiment="neutral" data-from="billing@fernwood-cafe.example.com" data-subject="Invoice #20458 shows wrong company name">
+      <td><span class="badge">3 &middot; Normal</span></td>
+      <td class="cat">billing</td>
+      <td class="sent-neutral">neutral</td>
+      <td class="from">billing@fernwood-cafe.example.com</td>
+      <td><div class="subject">Invoice #20458 shows wrong company name</div><div>Hello, our June invoice (#20458) is addressed to &#x27;Fernwood Cate&#x27; instead of &#x27;Fernwood Cafe&#x27;.</div></td>
+      <td><details><summary>show draft</summary><p>Thanks for flagging this — I&#x27;m looking into your billing history now. Could you confirm the last 4 digits of the card and the invoice date so I can trace the charge? If anything was billed in error we&#x27;ll correct it right away.</p></details></td>
+    </tr>
+    <tr class="u3" data-urgency="3" data-category="refund" data-sentiment="negative" data-from="greg.holloway@example.com" data-subject="This is unacceptable">
+      <td><span class="badge">3 &middot; Normal</span></td>
+      <td class="cat">refund</td>
+      <td class="sent-negative">negative</td>
+      <td class="from">greg.holloway@example.com</td>
+      <td><div class="subject">This is unacceptable</div><div>Third time contacting you.</div></td>
+      <td><details><summary>show draft</summary><p>Sorry this didn&#x27;t work out. I&#x27;ve started the refund review on our side — could you confirm the order or invoice number? Approved refunds are returned to the original payment method within 5-7 business days.</p></details></td>
+    </tr>
+    <tr class="u1" data-urgency="1" data-category="praise" data-sentiment="positive" data-from="amara.osei@example.com" data-subject="Wondering about API access">
+      <td><span class="badge">1 &middot; Low</span></td>
+      <td class="cat">praise</td>
+      <td class="sent-positive">positive</td>
+      <td class="from">amara.osei@example.com</td>
+      <td><div class="subject">Wondering about API access</div><div>Hi!</div></td>
+      <td><details><summary>show draft</summary><p>Thank you so much for the kind words — messages like this genuinely make our week. If there&#x27;s ever anything we can improve, we&#x27;re all ears.</p></details></td>
+    </tr>
+    <tr class="u1" data-urgency="1" data-category="spam" data-sentiment="neutral" data-from="seo-growth-pro@rankboost.example.net" data-subject="Guaranteed ranking on page 1">
+      <td><span class="badge">1 &middot; Low</span></td>
+      <td class="cat">spam</td>
+      <td class="sent-neutral">neutral</td>
+      <td class="from">seo-growth-pro@rankboost.example.net</td>
+      <td><div class="subject">Guaranteed ranking on page 1</div><div>Dear website owner, we noticed your site is not ranking.</div></td>
+      <td><details><summary>show draft</summary><p>No reply recommended — flagged as spam.</p></details></td>
+    </tr>
+    <tr class="u4" data-urgency="4" data-category="billing" data-sentiment="neutral" data-from="noel.fitz@example.com" data-subject="Payment failed but card is fine">
+      <td><span class="badge">4 &middot; High</span></td>
+      <td class="cat">billing</td>
+      <td class="sent-neutral">neutral</td>
+      <td class="from">noel.fitz@example.com</td>
+      <td><div class="subject">Payment failed but card is fine</div><div>My payment failed this morning and my account shows &#x27;past due&#x27;, but my card works everywhere else and has p...</div></td>
+      <td><details><summary>show draft</summary><p>Thanks for flagging this — I&#x27;m looking into your billing history now. Could you confirm the last 4 digits of the card and the invoice date so I can trace the charge? If anything was billed in error we&#x27;ll correct it right away.</p></details></td>
+    </tr>
+    <tr class="u2" data-urgency="2" data-category="feature-request" data-sentiment="positive" data-from="rachel.kim@example.com" data-subject="Small praise + a tiny suggestion">
+      <td><span class="badge">2 &middot; Minor</span></td>
+      <td class="cat">feature-request</td>
+      <td class="sent-positive">positive</td>
+      <td class="from">rachel.kim@example.com</td>
+      <td><div class="subject">Small praise + a tiny suggestion</div><div>Loving the new reports feature — genuinely saved me hours this week.</div></td>
+      <td><details><summary>show draft</summary><p>Thanks for the suggestion — I&#x27;ve passed it to our product team and added your vote to the request. We can&#x27;t promise a timeline, but we&#x27;ll let you know if it ships.</p></details></td>
+    </tr>
+    <tr class="u5" data-urgency="5" data-category="outage" data-sentiment="neutral" data-from="it@harborview-dental.example.com" data-subject="Cannot access account after password reset">
+      <td><span class="badge">5 &middot; Critical</span></td>
+      <td class="cat">outage</td>
+      <td class="sent-neutral">neutral</td>
+      <td class="from">it@harborview-dental.example.com</td>
+      <td><div class="subject">Cannot access account after password reset</div><div>After resetting our office manager&#x27;s password, she cannot access the account at all — it says &#x27;account lock...</div></td>
+      <td><details><summary>show draft</summary><p>Thanks for the report — we&#x27;re treating this as a priority and investigating now. I&#x27;ll follow up as soon as we&#x27;ve identified the cause. You can also watch our status page for live updates.</p></details></td>
+    </tr>
+  </tbody>
+</table>
+</main>
+<script>
+(function () {
+  var table = document.getElementById('triage');
+  var tbody = table.tBodies[0];
+  var dir = {};
+  table.tHead.addEventListener('click', function (e) {
+    var th = e.target.closest('th');
+    if (!th || !th.dataset.key) return;
+    var key = th.dataset.key;
+    var numeric = th.dataset.num === '1';
+    dir[key] = -(dir[key] || (numeric ? 1 : -1));
+    var rows = Array.prototype.slice.call(tbody.rows);
+    rows.sort(function (a, b) {
+      var av = a.dataset[key], bv = b.dataset[key];
+      if (numeric) return (Number(av) - Number(bv)) * dir[key];
+      return av.localeCompare(bv) * dir[key];
+    });
+    rows.forEach(function (r) { tbody.appendChild(r); });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+{
+  "generated_at": "2026-07-19T18:48:05+00:00",
+  "count": 15,
+  "emails": [
+    {
+      "id": "em-001",
+      "from": "dana.whitfield@example.com",
+      "subject": "Charged twice this month?!",
+      "received_at": "2026-07-14T08:12:00Z",
+      "category": "billing",
+      "urgency": 3,
+      "sentiment": "neutral",
+      "summary": "Hi, I just checked my bank statement and I was charged $49 twice on July 3rd.",
+      "suggested_reply": "Thanks for flagging this — I'm looking into your billing history now. Could you confirm the last 4 digits of the card and the invoice date so I can trace the charge? If anything was billed in error we'll correct it right away."
+    },
+    {
+      "id": "em-002",
+      "from": "marco.t@example.com",
+      "subject": "Requesting a refund for order #4471",
+      "received_at": "2026-07-14T09:30:00Z",
+      "category": "refund",
+      "urgency": 3,
+      "sentiment": "negative",
+      "summary": "Hello, I ordered the Pro plan last week but it turns out it doesn't have the export feature I needed.",
+      "suggested_reply": "Sorry this didn't work out. I've started the refund review on our side — could you confirm the order or invoice number? Approved refunds are returned to the original payment method within 5-7 business days."
+    },
+    {
+      "id": "em-003",
+      "from": "ops@brightlane-logistics.example.com",
+      "subject": "URGENT: dashboard completely down",
+      "received_at": "2026-07-14T11:02:00Z",
+      "category": "outage",
+      "urgency": 5,
+      "sentiment": "neutral",
+      "summary": "Our whole team cannot access the dashboard since about 7am.",
+      "suggested_reply": "Thanks for the report — we're treating this as a priority and investigating now. I'll follow up as soon as we've identified the cause. You can also watch our status page for live updates."
+    },
+    {
+      "id": "em-004",
+      "from": "jenny.park@example.com",
+      "subject": "You folks are amazing",
+      "received_at": "2026-07-13T16:45:00Z",
+      "category": "praise",
+      "urgency": 1,
+      "sentiment": "positive",
+      "summary": "Just wanted to say thank you to your support team — Priya helped me migrate all my data last week and staye...",
+      "suggested_reply": "Thank you so much for the kind words — messages like this genuinely make our week. If there's ever anything we can improve, we're all ears."
+    },
+    {
+      "id": "em-005",
+      "from": "winner-alert@lucky-crypto-hub.example.net",
+      "subject": "You have been selected — act now",
+      "received_at": "2026-07-13T03:14:00Z",
+      "category": "spam",
+      "urgency": 1,
+      "sentiment": "neutral",
+      "summary": "Congratulations!",
+      "suggested_reply": "No reply recommended — flagged as spam."
+    },
+    {
+      "id": "em-006",
+      "from": "sofia.reyes@example.com",
+      "subject": "Feature request: dark mode",
+      "received_at": "2026-07-12T22:10:00Z",
+      "category": "feature-request",
+      "urgency": 3,
+      "sentiment": "positive",
+      "summary": "Hi team, I use the app late at night and it would be great if you could please add a dark mode.",
+      "suggested_reply": "Thanks for the suggestion — I've passed it to our product team and added your vote to the request. We can't promise a timeline, but we'll let you know if it ships."
+    },
+    {
+      "id": "em-007",
+      "from": "tom.abernathy@example.com",
+      "subject": "App crashes when uploading CSV over 10MB",
+      "received_at": "2026-07-14T10:20:00Z",
+      "category": "bug",
+      "urgency": 3,
+      "sentiment": "neutral",
+      "summary": "Steps to reproduce: go to Imports, choose a CSV bigger than about 10MB, hit upload.",
+      "suggested_reply": "Thanks for the detailed report. I've logged this with our engineering team. Could you share what device/browser you're on and roughly when it last happened? That will help us reproduce it quickly."
+    },
+    {
+      "id": "em-008",
+      "from": "l.nakamura@example.com",
+      "subject": "How do I add a second user to my account?",
+      "received_at": "2026-07-13T14:05:00Z",
+      "category": "question",
+      "urgency": 2,
+      "sentiment": "positive",
+      "summary": "Hi, quick question — is it possible to add my business partner as a second user on my existing plan, or do...",
+      "suggested_reply": "Thanks for reaching out. Happy to help — I've included the most relevant details below, and if anything is still unclear just reply to this email."
+    },
+    {
+      "id": "em-009",
+      "from": "billing@fernwood-cafe.example.com",
+      "subject": "Invoice #20458 shows wrong company name",
+      "received_at": "2026-07-12T09:48:00Z",
+      "category": "billing",
+      "urgency": 3,
+      "sentiment": "neutral",
+      "summary": "Hello, our June invoice (#20458) is addressed to 'Fernwood Cate' instead of 'Fernwood Cafe'.",
+      "suggested_reply": "Thanks for flagging this — I'm looking into your billing history now. Could you confirm the last 4 digits of the card and the invoice date so I can trace the charge? If anything was billed in error we'll correct it right away."
+    },
+    {
+      "id": "em-010",
+      "from": "greg.holloway@example.com",
+      "subject": "This is unacceptable",
+      "received_at": "2026-07-14T07:55:00Z",
+      "category": "refund",
+      "urgency": 3,
+      "sentiment": "negative",
+      "summary": "Third time contacting you.",
+      "suggested_reply": "Sorry this didn't work out. I've started the refund review on our side — could you confirm the order or invoice number? Approved refunds are returned to the original payment method within 5-7 business days."
+    },
+    {
+      "id": "em-011",
+      "from": "amara.osei@example.com",
+      "subject": "Wondering about API access",
+      "received_at": "2026-07-13T11:33:00Z",
+      "category": "praise",
+      "urgency": 1,
+      "sentiment": "positive",
+      "summary": "Hi!",
+      "suggested_reply": "Thank you so much for the kind words — messages like this genuinely make our week. If there's ever anything we can improve, we're all ears."
+    },
+    {
+      "id": "em-012",
+      "from": "seo-growth-pro@rankboost.example.net",
+      "subject": "Guaranteed ranking on page 1",
+      "received_at": "2026-07-12T05:27:00Z",
+      "category": "spam",
+      "urgency": 1,
+      "sentiment": "neutral",
+      "summary": "Dear website owner, we noticed your site is not ranking.",
+      "suggested_reply": "No reply recommended — flagged as spam."
+    },
+    {
+      "id": "em-013",
+      "from": "noel.fitz@example.com",
+      "subject": "Payment failed but card is fine",
+      "received_at": "2026-07-14T09:58:00Z",
+      "category": "billing",
+      "urgency": 4,
+      "sentiment": "neutral",
+      "summary": "My payment failed this morning and my account shows 'past due', but my card works everywhere else and has p...",
+      "suggested_reply": "Thanks for flagging this — I'm looking into your billing history now. Could you confirm the last 4 digits of the card and the invoice date so I can trace the charge? If anything was billed in error we'll correct it right away."
+    },
+    {
+      "id": "em-014",
+      "from": "rachel.kim@example.com",
+      "subject": "Small praise + a tiny suggestion",
+      "received_at": "2026-07-13T19:21:00Z",
+      "category": "feature-request",
+      "urgency": 2,
+      "sentiment": "positive",
+      "summary": "Loving the new reports feature — genuinely saved me hours this week.",
+      "suggested_reply": "Thanks for the suggestion — I've passed it to our product team and added your vote to the request. We can't promise a timeline, but we'll let you know if it ships."
+    },
+    {
+      "id": "em-015",
+      "from": "it@harborview-dental.example.com",
+      "subject": "Cannot access account after password reset",
+      "received_at": "2026-07-14T12:41:00Z",
+      "category": "outage",
+      "urgency": 5,
+      "sentiment": "neutral",
+      "summary": "After resetting our office manager's password, she cannot access the account at all — it says 'account lock...",
+      "suggested_reply": "Thanks for the report — we're treating this as a priority and investigating now. I'll follow up as soon as we've identified the cause. You can also watch our status page for live updates."
+    }
+  ]
+}
